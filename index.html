@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yai norika — Reviews & Credits</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond (Luxury Headings) & Prompt (Minimalist Thai Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for clean luxury icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Prompt"', 'sans-serif'],
+                    },
+                    colors: {
+                        pastel: {
+                            bg: '#FDF9FC',
+                            pink: '#FADADD',
+                            pinkDark: '#E8A5B2',
+                            purple: '#E5D9F2',
+                            purpleDark: '#9B7EBD',
+                            deep: '#4A354F',
+                            muted: '#8B7691',
+                            gold: '#D4AF37'
+                        }
+                    },
+                    boxShadow: {
+                        'luxury': '0 12px 35px -8px rgba(155, 126, 189, 0.16), 0 4px 15px -3px rgba(248, 200, 220, 0.25)',
+                        'bubble': '0 10px 30px -5px rgba(155, 126, 189, 0.14)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: radial-gradient(circle at 15% 15%, #FFF2F7 0%, #F6EFFC 45%, #FCF9FD 100%);
+            color: #4A354F;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Luxury Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        /* Custom Speech Bubble Tails matching the wireframe - Pastel Aesthetic Style */
+        .bubble-left {
+            position: relative;
+            border-radius: 1.35rem 1.35rem 1.35rem 0.5rem;
+            background: #F9F5FD;
+            border: 1.5px solid #EAE0F5;
+            box-shadow: 0 8px 24px -6px rgba(155, 126, 189, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bubble-left::after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: 20px;
+            width: 13px;
+            height: 13px;
+            background: #F9F5FD;
+            border-bottom: 1.5px solid #EAE0F5;
+            border-right: 1.5px solid #EAE0F5;
+            transform: rotate(45deg);
+            border-bottom-right-radius: 3px;
+        }
+
+        .bubble-right {
+            position: relative;
+            border-radius: 1.35rem 1.35rem 0.5rem 1.35rem;
+            background: #FFF6F8;
+            border: 1.5px solid #F7DDE4;
+            box-shadow: 0 8px 24px -6px rgba(232, 165, 178, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bubble-right::after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            right: 20px;
+            width: 13px;
+            height: 13px;
+            background: #FFF6F8;
+            border-bottom: 1.5px solid #F7DDE4;
+            border-right: 1.5px solid #F7DDE4;
+            transform: rotate(45deg);
+            border-bottom-right-radius: 3px;
+        }
+
+        .bubble-left:hover, .bubble-right:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px -8px rgba(155, 126, 189, 0.2);
+        }
+
+        /* Subtle shimmer button */
+        .btn-luxury-primary {
+            background: linear-gradient(135deg, #D8A7B1 0%, #9B7EBD 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-luxury-primary:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(155, 126, 189, 0.45);
+        }
+
+        .btn-luxury-outline {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1.5px solid #DFC5E8;
+            color: #4A354F;
+            transition: all 0.3s ease;
+        }
+        .btn-luxury-outline:hover {
+            background: #FFFFFF;
+            border-color: #9B7EBD;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(155, 126, 189, 0.2);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDF9FC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DFC5E8;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pastel-purple selection:text-pastel-deep">
+
+    <!-- Top Minimal Brand Bar & Demo Admin Toggle -->
+    <header class="w-full max-w-4xl mx-auto px-4 pt-6 pb-2 flex items-center justify-between">
+        <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-pastel-pink to-pastel-purple p-0.5 shadow-sm border border-white overflow-hidden shrink-0">
+                <img 
+                    id="logoImage"
+                    src="https://i.postimg.cc/QxBtvVSk/Crkh-m-phaerw-s-thth-chi-s-wnt-w.png" 
+                    alt="Yai norika Logo" 
+                    class="w-full h-full object-cover rounded-full bg-white"
+                    onerror="this.onerror=null; this.src='https://placehold.co/100x100/F6E6F2/5E4368?text=Y';"
+                />
+            </div>
+            <div>
+                <h1 class="font-sans text-lg sm:text-xl font-semibold tracking-tight text-pastel-deep leading-tight flex items-center gap-1.5">
+                    <span>Yai norika</span>
+                    <i class="ph-fill ph-seal-check text-pastel-purpleDark text-base"></i>
+                </h1>
+                <p class="font-sans text-[11px] font-medium tracking-wider text-pastel-muted mt-0.5">OFFICIAL REVIEWS & CREDIT</p>
+            </div>
+        </div>
+
+        <!-- Admin Mode Switcher (For Demo Back-office features) -->
+        <button id="adminToggleBtn" onclick="openAdminModal()" class="flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-medium glass-panel text-pastel-deep hover:border-pastel-purpleDark transition shadow-sm">
+            <i class="ph ph-sliders-horizontal text-sm text-pastel-purpleDark"></i>
+            <span>จัดการระบบหลังบ้าน (Demo)</span>
+        </button>
+    </header>
+
+    <!-- MAIN CONTAINER (Strictly following the sketch layout) -->
+    <main class="w-full max-w-4xl mx-auto px-4 py-4 md:py-6">
+
+        <!-- ==========================================
+             1. รูปแบนเนอร์ (Banner Section - Top Box in Sketch)
+             ========================================== -->
+        <section aria-label="รูปแบนเนอร์" class="mb-7 md:mb-9">
+            <div class="relative rounded-3xl p-2 md:p-3 glass-panel shadow-luxury overflow-hidden group">
+                <!-- Decorative subtle inner border -->
+                <div class="relative w-full h-52 sm:h-72 md:h-80 lg:h-96 rounded-2xl overflow-hidden bg-gradient-to-r from-pastel-pink/40 via-pastel-purple/40 to-pastel-pink/30">
+                    <img 
+                        id="bannerImage"
+                        src="https://i.postimg.cc/QxBtvVSk/Crkh-m-phaerw-s-thth-chi-s-wnt-w.png" 
+                        alt="Yai norika Banner" 
+                        class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-[1.02]"
+                        onerror="this.onerror=null; this.src='https://placehold.co/1200x500/F6E6F2/5E4368?text=Yai+norika+-+Demo+Banner';"
+                    />
+                    <!-- Subtle luxury gradient overlay at bottom for badge -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-pastel-deep/35 via-transparent to-transparent pointer-events-none"></div>
+                    
+                    <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between text-white pointer-events-none">
+                        <div class="bg-white/25 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/40 flex items-center gap-1.5">
+                            <i class="ph-fill ph-seal-check text-pink-200 text-base"></i>
+                            <span class="text-xs font-light tracking-wide">Verified Credit & Reviews</span>
+                        </div>
+                        <div class="hidden sm:flex items-center gap-1 bg-black/25 backdrop-blur-md px-3 py-1 rounded-full text-xs">
+                            <i class="ph-fill ph-star text-amber-300"></i>
+                            <span id="avgRatingBadge">5.0</span>
+                            <span class="opacity-80">(<span id="totalReviewBadge">8</span> รีวิว)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             2. ปุ่มช่องทางการติดต่อ & ปุ่มรีวิว (Two Centered Buttons in Sketch)
+             ========================================== -->
+        <section aria-label="ปุ่มควบคุมหลัก" class="mb-10 md:mb-14">
+            <div class="flex flex-row items-center justify-center gap-3 sm:gap-6 max-w-xl mx-auto">
+                <!-- Left Button in Sketch: ช่องทางการติดต่อ -->
+                <button 
+                    onclick="openContactModal()" 
+                    class="flex-1 py-3.5 sm:py-4 px-4 sm:px-6 rounded-2xl btn-luxury-outline font-medium text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-sm"
+                >
+                    <span class="w-8 h-8 rounded-full bg-pastel-purple/60 flex items-center justify-center text-pastel-deep shrink-0">
+                        <i class="ph ph-chats-circle text-lg"></i>
+                    </span>
+                    <span>ช่องทางการติดต่อ</span>
+                </button>
+
+                <!-- Right Button in Sketch: ปุ่มรีวิว -->
+                <button 
+                    onclick="openReviewModal()" 
+                    class="flex-1 py-3.5 sm:py-4 px-4 sm:px-6 rounded-2xl btn-luxury-primary font-medium text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-md"
+                >
+                    <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
+                        <i class="ph ph-sparkle text-lg"></i>
+                    </span>
+                    <span>เขียนรีวิว / ส่งเครดิต</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             3. รายการบอลลูนรีวิวซ้าย-ขวา (Staggered Speech Bubbles in Sketch)
+             ========================================== -->
+        <section aria-label="รายการรีวิวจากลูกค้า" class="relative pb-16">
+            <!-- Section Subtle Header -->
+            <div class="text-center mb-7">
+                <span class="text-xs uppercase tracking-[0.25em] text-pastel-muted block mb-1">Customer Voices</span>
+                <h2 class="font-sans text-xl sm:text-2xl font-semibold text-pastel-deep">ความประทับใจและเครดิตจากลูกค้า</h2>
+                <div class="w-14 h-0.5 bg-gradient-to-r from-pastel-pinkDark to-pastel-purpleDark mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <!-- Two-Column Aligned Speech Bubble Grid (Pastel Aesthetic neatly aligned) -->
+            <div id="reviewsContainer" class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-5 items-stretch">
+            </div>
+
+            <!-- Empty State if all reviews deleted -->
+            <div id="emptyReviewState" class="hidden text-center py-12 glass-panel rounded-3xl">
+                <i class="ph ph-chat-teardrop-dots text-4xl text-pastel-purpleDark mb-2"></i>
+                <p class="text-pastel-deep font-medium">ยังไม่มีรายการรีวิวในขณะนี้</p>
+                <p class="text-xs text-pastel-muted mt-1">ร่วมเป็นคนแรกที่ส่งความประทับใจให้กับ Yai norika</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="w-full border-t border-pastel-purple/60 py-6 text-center text-xs text-pastel-muted bg-white/40">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p class="font-serif text-sm text-pastel-deep font-semibold">Yai norika</p>
+            <p>ระบบตัวอย่าง (Demo Version) • ข้อมูลถูกจำลองไว้ในเบราว์เซอร์ของคุณ</p>
+        </div>
+    </footer>
+
+    <!-- =================================================================
+         MODAL 1: ช่องทางการติดต่อ (Customer Contact Channels Popup)
+         ================================================================= -->
+    <div id="contactModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-pastel-deep/40 backdrop-blur-sm">
+        <div class="glass-panel bg-white/95 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-white relative animate-fadeIn">
+            <button onclick="closeModal('contactModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-pastel-purple/40 hover:bg-pastel-purple flex items-center justify-center text-pastel-deep transition">
+                <i class="ph ph-x"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-pastel-pink to-pastel-purple mx-auto flex items-center justify-center mb-3 shadow-sm">
+                    <i class="ph ph-chats-circle text-2xl text-pastel-deep"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-semibold text-pastel-deep">ช่องทางการติดต่อ</h3>
+                <p id="contactSubtitleDisplay" class="text-xs text-pastel-muted mt-1">สามารถติดต่อสอบถามหรือเช็กเครดิตเพิ่มเติมได้ทุกช่องทาง</p>
+            </div>
+
+            <!-- Dynamic Contact List rendered by JS -->
+            <div id="contactLinksList" class="space-y-3"></div>
+
+            <div class="mt-6 pt-4 border-t border-pastel-purple/40 text-center">
+                <button onclick="closeModal('contactModal')" class="text-xs text-pastel-muted hover:text-pastel-deep transition">
+                    ปิดหน้าต่างนี้
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================================
+         MODAL 2: ปุ่มรีวิว (Customer Submit Review Popup)
+         ================================================================= -->
+    <div id="reviewModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-pastel-deep/40 backdrop-blur-sm">
+        <div class="glass-panel bg-white/95 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-white relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('reviewModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-pastel-purple/40 hover:bg-pastel-purple flex items-center justify-center text-pastel-deep transition">
+                <i class="ph ph-x"></i>
+            </button>
+
+            <div class="text-center mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-pastel-pink to-pastel-purple mx-auto flex items-center justify-center mb-3 shadow-sm">
+                    <i class="ph ph-sparkle text-2xl text-pastel-deep"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-semibold text-pastel-deep">ส่งรีวิว / เพิ่มเครดิต</h3>
+                <p class="text-xs text-pastel-muted mt-1">ข้อความของคุณจะปรากฏในบอลลูนรีวิวหน้าเว็บไซต์ทันที</p>
+            </div>
+
+            <form id="submitReviewForm" onsubmit="handleReviewSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-pastel-deep mb-1.5">ชื่อของคุณ / แอคเคานต์ลูกค้า <span class="text-pink-500">*</span></label>
+                    <input 
+                        type="text" 
+                        id="reviewerName" 
+                        required 
+                        placeholder="เช่น คุณพลอย (@ploy_lovely)"
+                        class="w-full px-4 py-2.5 rounded-xl border border-pastel-purple bg-white/80 text-sm focus:outline-none focus:border-pastel-purpleDark"
+                    />
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-pastel-deep mb-1.5">หมวดหมู่บริการ / สินค้า</label>
+                    <input 
+                        type="text" 
+                        id="reviewTag" 
+                        placeholder="เช่น ส่งไวมาก / เครดิตแน่น / บริการประทับใจ"
+                        class="w-full px-4 py-2.5 rounded-xl border border-pastel-purple bg-white/80 text-sm focus:outline-none focus:border-pastel-purpleDark"
+                    />
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-pastel-deep mb-1.5">ระดับความประทับใจ</label>
+                    <div id="starSelector" class="flex items-center gap-2 bg-pastel-bg px-4 py-2.5 rounded-xl border border-pastel-purple/60">
+                        <button type="button" onclick="setRating(1)" class="star-btn text-2xl text-amber-400"><i class="ph-fill ph-star"></i></button>
+                        <button type="button" onclick="setRating(2)" class="star-btn text-2xl text-amber-400"><i class="ph-fill ph-star"></i></button>
+                        <button type="button" onclick="setRating(3)" class="star-btn text-2xl text-amber-400"><i class="ph-fill ph-star"></i></button>
+                        <button type="button" onclick="setRating(4)" class="star-btn text-2xl text-amber-400"><i class="ph-fill ph-star"></i></button>
+                        <button type="button" onclick="setRating(5)" class="star-btn text-2xl text-amber-400"><i class="ph-fill ph-star"></i></button>
+                        <span id="ratingText" class="ml-auto text-xs font-medium text-pastel-muted">5 ดาว (ดีเยี่ยม)</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-pastel-deep mb-1.5">ข้อความรีวิว <span class="text-pink-500">*</span></label>
+                    <textarea 
+                        id="reviewMessage" 
+                        rows="3" 
+                        required 
+                        placeholder="เขียนรีวิวความประทับใจของคุณที่นี่..."
+                        class="w-full px-4 py-2.5 rounded-xl border border-pastel-purple bg-white/80 text-sm focus:outline-none focus:border-pastel-purpleDark resize-none"
+                    ></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-pastel-deep mb-1.5">ลิงก์รูปภาพประกอบรีวิว (ถ้ามี)</label>
+                    <input 
+                        type="url" 
+                        id="reviewImage" 
+                        placeholder="วาง URL รูปภาพ หรือเว้นว่างไว้ได้"
+                        class="w-full px-4 py-2.5 rounded-xl border border-pastel-purple bg-white/80 text-sm focus:outline-none focus:border-pastel-purpleDark"
+                    />
+                    <p class="text-[11px] text-pastel-muted mt-1">หากเว้นว่าง ระบบจะแสดงเฉพาะข้อความในบอลลูนรีวิว</p>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl btn-luxury-primary font-medium text-sm shadow-md mt-2">
+                    โพสต์รีวิวขึ้นหน้าเว็บไซต์
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =================================================================
+         MODAL 3: ระบบหลังบ้าน (Admin Panel for Banner, Contact Links & Reviews)
+         ================================================================= -->
+    <div id="adminModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-pastel-deep/50 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-pastel-purple overflow-hidden">
+            
+            <!-- Admin Modal Header -->
+            <div class="px-6 py-4 bg-gradient-to-r from-pastel-pink/50 to-pastel-purple/50 border-b border-pastel-purple flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-pastel-deep shadow-sm">
+                        <i class="ph ph-gear-six text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base text-pastel-deep">ระบบจัดการหลังบ้าน (Demo Back-Office)</h3>
+                        <p class="text-[11px] text-pastel-muted">แก้ไขรูปแบนเนอร์ ช่องทางการติดต่อ และจัดการลบ/เพิ่มรีวิว</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('adminModal')" class="w-8 h-8 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-pastel-deep">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+
+            <!-- Admin Tabs -->
+            <div class="flex border-b border-pastel-purple/50 bg-pastel-bg px-6 pt-2 gap-2 overflow-x-auto">
+                <button onclick="switchAdminTab('tab-reviews')" id="btn-tab-reviews" class="admin-tab-btn px-4 py-2.5 text-xs font-medium border-b-2 border-pastel-purpleDark text-pastel-deep whitespace-nowrap">
+                    1. จัดการรีวิว (<span id="adminReviewCount">0</span>)
+                </button>
+                <button onclick="switchAdminTab('tab-banner')" id="btn-tab-banner" class="admin-tab-btn px-4 py-2.5 text-xs font-medium border-b-2 border-transparent text-pastel-muted hover:text-pastel-deep whitespace-nowrap">
+                    2. เปลี่ยนรูปแบนเนอร์
+                </button>
+                <button onclick="switchAdminTab('tab-contacts')" id="btn-tab-contacts" class="admin-tab-btn px-4 py-2.5 text-xs font-medium border-b-2 border-transparent text-pastel-muted hover:text-pastel-deep whitespace-nowrap">
+                    3. แก้ไขช่องทางการติดต่อ
+                </button>
+            </div>
+
+            <!-- Admin Tab Contents -->
+            <div class="p-6 overflow-y-auto space-y-6 flex-1">
+                
+                <!-- Warning Banner about Demo Storage -->
+                <div class="p-3.5 rounded-2xl bg-amber-50/90 border border-amber-200/80 text-amber-900 text-xs flex items-start gap-2.5">
+                    <i class="ph-fill ph-info text-base text-amber-600 shrink-0 mt-0.5"></i>
+                    <div>
+                        <strong>หมายเหตุสำหรับเวอร์ชัน Demo:</strong> การแก้ไขข้อมูลในหน้านี้ทำงานผ่านหน่วยความจำของเบราว์เซอร์ (LocalStorage) เพื่อให้คุณทดสอบฟังก์ชันได้ครบถ้วน ยังไม่ได้เชื่อมต่อฐานข้อมูลจริงหรือระบบล็อกอินที่ปลอดภัย
+                    </div>
+                </div>
+
+                <!-- TAB 1: Manage Reviews -->
+                <div id="tab-reviews" class="admin-tab-pane space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-semibold text-pastel-deep">รายการรีวิวทั้งหมดบนหน้าเว็บ</h4>
+                        <button onclick="resetDemoData()" class="text-xs text-pink-600 hover:underline flex items-center gap-1">
+                            <i class="ph ph-arrow-counter-clockwise"></i> รีเซ็ตเป็นค่าเริ่มต้น Demo
+                        </button>
+                    </div>
+                    <div id="adminReviewsList" class="space-y-2.5"></div>
+                </div>
+
+                <!-- TAB 2: Change Banner Image -->
+                <div id="tab-banner" class="admin-tab-pane hidden space-y-4">
+                    <h4 class="text-sm font-semibold text-pastel-deep">เปลี่ยนรูปภาพแบนเนอร์ด้านบน</h4>
+                    <div class="rounded-2xl overflow-hidden border border-pastel-purple h-44 bg-pastel-bg">
+                        <img id="adminBannerPreview" src="" alt="Banner Preview" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-medium text-pastel-deep mb-1">วางลิงก์รูปภาพแบนเนอร์ใหม่ (Image URL)</label>
+                            <input 
+                                type="url" 
+                                id="adminBannerInput" 
+                                placeholder="https://..." 
+                                class="w-full px-4 py-2.5 rounded-xl border border-pastel-purple text-sm focus:outline-none focus:border-pastel-purpleDark"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-pastel-deep mb-1">หรือเลือกรูปภาพจากเครื่องของคุณ (ทดสอบแสดงผลทันที)</label>
+                            <input 
+                                type="file" 
+                                accept="image/*" 
+                                onchange="handleBannerFileUpload(event)"
+                                class="block w-full text-xs text-pastel-muted file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-medium file:bg-pastel-purple/60 file:text-pastel-deep hover:file:bg-pastel-purple"
+                            />
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <button onclick="saveBannerUrl()" class="px-5 py-2.5 rounded-xl btn-luxury-primary text-xs font-medium">
+                                บันทึกรูปแบนเนอร์
+                            </button>
+                            <button onclick="restoreDefaultBanner()" class="px-4 py-2.5 rounded-xl border border-pastel-purple text-xs text-pastel-deep hover:bg-pastel-bg">
+                                ใช้รูปต้นฉบับของคุณ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: Edit Contact Channels -->
+                <div id="tab-contacts" class="admin-tab-pane hidden space-y-4">
+                    <h4 class="text-sm font-semibold text-pastel-deep">แก้ไขรายละเอียดและลิงก์ช่องทางการติดต่อ</h4>
+                    <div>
+                        <label class="block text-xs font-medium text-pastel-deep mb-1">ข้อความคำโปรยใต้หัวข้อติดต่อ</label>
+                        <input 
+                            type="text" 
+                            id="adminContactSubtitle" 
+                            class="w-full px-4 py-2 rounded-xl border border-pastel-purple text-sm"
+                        />
+                    </div>
+
+                    <div id="adminContactsEditor" class="space-y-3"></div>
+
+                    <div class="flex items-center justify-between pt-2">
+                        <button onclick="addContactChannel()" class="px-4 py-2 rounded-xl border border-pastel-purpleDark text-xs font-medium text-pastel-deep hover:bg-pastel-purple/30 flex items-center gap-1.5">
+                            <i class="ph ph-plus-circle"></i> เพิ่มช่องทางติดต่อใหม่
+                        </button>
+                        <button onclick="saveContactChannels()" class="px-5 py-2.5 rounded-xl btn-luxury-primary text-xs font-medium">
+                            บันทึกช่องทางการติดต่อ
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification (No alert() used) -->
+    <div id="toastBox" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-2xl bg-pastel-deep text-white text-xs shadow-xl">
+        <i class="ph-fill ph-check-circle text-pink-300 text-lg"></i>
+        <span id="toastMessage">บันทึกข้อมูลสำเร็จ</span>
+    </div>
+
+    <script>
+        // =========================================================
+        // INITIAL DEMO DATA (Matches Yai norika's provided banner & 8 sketch bubbles)
+        // =========================================================
+        const DEFAULT_BANNER = "https://i.postimg.cc/QxBtvVSk/Crkh-m-phaerw-s-thth-chi-s-wnt-w.png";
+
+        const DEFAULT_CONTACTS = {
+            subtitle: "สามารถติดต่อสอบถาม เช็กเครดิต หรือสั่งซื้อกับ Yai norika ได้โดยตรง",
+            channels: [
+                { id: 'c1', platform: 'Line Official', label: '@yainorika (มี @)', url: 'https://line.me', icon: 'ph-chat-circle-dots' },
+                { id: 'c2', platform: 'Facebook / Page', label: 'Yai norika Official', url: 'https://facebook.com', icon: 'ph-facebook-logo' },
+                { id: 'c3', platform: 'Instagram', label: '@yainorika.official', url: 'https://instagram.com', icon: 'ph-instagram-logo' }
+            ]
+        };
+
+        // 8 initial reviews corresponding to the 8 speech bubbles in the sketch (4 left, 4 right)
+        const DEFAULT_REVIEWS = [
+            {
+                id: 'r1',
+                name: 'คุณมินตรา (@mintra.k)',
+                tag: 'เครดิตแน่น • บริการไว',
+                rating: 5,
+                message: 'แม่ค้าน่ารักมากเลยค่ะ ตอบแชทไว ให้คำแนะนำดีสุดๆ ได้รับของรวดเร็วถูกต้องครบถ้วน ประทับใจมากค่ะ 💕',
+                date: 'วันนี้',
+                image: ''
+            },
+            {
+                id: 'r2',
+                name: 'คุณแพรวา (Praewa S.)',
+                tag: 'ลูกค้าประจำ',
+                rating: 5,
+                message: 'อุดหนุนกับ Yai norika รอบที่ 4 แล้วค่ะ เครดิตแน่น ไว้ใจได้ 100% ไม่เคยผิดหวังเลย แนะนำเพื่อนมาซื้อต่อเพียบเลยค่ะ ✨',
+                date: 'เมื่อวานนี้',
+                image: ''
+            },
+            {
+                id: 'r3',
+                name: 'K. Chanyaphat',
+                tag: 'ส่งไวทันใจ',
+                rating: 5,
+                message: 'งานเรียบร้อยและตรงปกมากค่ะ โอนปุ๊บจัดการให้ทันที มีอัปเดตสถานะตลอด สบายใจหายห่วงเลยค่ะ 🌸',
+                date: '2 วันที่แล้ว',
+                image: ''
+            },
+            {
+                id: 'r4',
+                name: 'คุณเนย (@noey_sweet)',
+                tag: 'รีวิวพร้อมรูป Demo',
+                rating: 5,
+                message: 'ประทับใจตั้งแต่ครั้งแรกที่ใช้บริการเลยค่ะ พูดจาไพเราะ ใส่ใจรายละเอียดเล็กๆ น้อยๆ ดีมาก เอาไปเลย 5 ดาวเต็ม!',
+                date: '3 วันที่แล้ว',
+                image: 'https://placehold.co/600x360/F8E8F4/6A4C78?text=Demo+Review+Photo'
+            },
+            {
+                id: 'r5',
+                name: 'คุณฟ้าใส (Fahsai P.)',
+                tag: 'เครดิตปลอดภัย 100%',
+                rating: 5,
+                message: 'ตอนแรกลังเล พอได้มาลองคุยแล้วประทับใจมากค่ะ โปร่งใส ตรวจสอบได้ทุกขั้นตอน ไว้กลับมาอุดหนุนอีกแน่นอนค่ะ 💜',
+                date: '4 วันที่แล้ว',
+                image: ''
+            },
+            {
+                id: 'r6',
+                name: 'คุณลูกพีช (@peach_p)',
+                tag: 'บริการระดับพรีเมียม',
+                rating: 5,
+                message: 'ดูแลดีตั้งแต่ต้นจนจบงานเลยค่ะ ตอบคำถามละเอียด ไม่เหวี่ยงไม่วีน น่ารักที่สุดในโลกเลยค่า 🌷',
+                date: '5 วันที่แล้ว',
+                image: ''
+            },
+            {
+                id: 'r7',
+                name: 'คุณอิงฟ้า (Ingfah)',
+                tag: 'รวดเร็วทันใจ',
+                rating: 5,
+                message: 'งานด่วนงานไวไว้ใจที่นี่ได้เลยค่ะ รวดเร็วทันใจสุดๆ ขอบคุณมากๆ เลยนะคะที่ช่วยดูแลอย่างดี ✨',
+                date: '1 สัปดาห์ที่แล้ว',
+                image: ''
+            },
+            {
+                id: 'r8',
+                name: 'คุณเบลล์ (@belle.official)',
+                tag: 'ยืนยันเครดิตอีกเสียง',
+                rating: 5,
+                message: 'มายืนยันเครดิตให้อีกเสียงค่ะ ของจริง ส่งจริง ได้รับชัวร์ แพ็กเกจและรายละเอียดทุกอย่างดูดีมีระดับมากค่ะ 💖',
+                date: '1 สัปดาห์ที่แล้ว',
+                image: ''
+            }
+        ];
+
+        // State Variables
+        let appState = {
+            bannerUrl: DEFAULT_BANNER,
+            contacts: JSON.parse(JSON.stringify(DEFAULT_CONTACTS)),
+            reviews: JSON.parse(JSON.stringify(DEFAULT_REVIEWS)),
+            currentFormRating: 5
+        };
+
+        // Load from LocalStorage if available
+        function loadState() {
+            try {
+                const saved = localStorage.getItem('yainorika_demo_state_v1');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    appState.bannerUrl = parsed.bannerUrl || DEFAULT_BANNER;
+                    appState.contacts = parsed.contacts || JSON.parse(JSON.stringify(DEFAULT_CONTACTS));
+                    appState.reviews = Array.isArray(parsed.reviews) ? parsed.reviews : JSON.parse(JSON.stringify(DEFAULT_REVIEWS));
+                }
+            } catch (e) {
+                console.warn('Could not read LocalStorage, using default demo state.');
+            }
+        }
+
+        function saveState() {
+            try {
+                localStorage.setItem('yainorika_demo_state_v1', JSON.stringify({
+                    bannerUrl: appState.bannerUrl,
+                    contacts: appState.contacts,
+                    reviews: appState.reviews
+                }));
+            } catch (e) {
+                console.warn('Could not persist to LocalStorage.');
+            }
+        }
+
+        // =========================================================
+        // RENDER FUNCTIONS (Front-End)
+        // =========================================================
+        function renderAll() {
+            renderBanner();
+            renderReviews();
+            renderContactModalContent();
+            renderAdminPanelContent();
+        }
+
+        function renderBanner() {
+            const bannerImg = document.getElementById('bannerImage');
+            bannerImg.src = appState.bannerUrl || DEFAULT_BANNER;
+            const logoImg = document.getElementById('logoImage');
+            if (logoImg) {
+                logoImg.src = appState.bannerUrl || DEFAULT_BANNER;
+            }
+
+            // Update stats badge on banner
+            const count = appState.reviews.length;
+            document.getElementById('totalReviewBadge').textContent = count;
+            if (count > 0) {
+                const avg = (appState.reviews.reduce((acc, r) => acc + (Number(r.rating) || 5), 0) / count).toFixed(1);
+                document.getElementById('avgRatingBadge').textContent = avg;
+            } else {
+                document.getElementById('avgRatingBadge').textContent = '5.0';
+            }
+        }
+
+        function renderReviews() {
+            const container = document.getElementById('reviewsContainer');
+            const emptyState = document.getElementById('emptyReviewState');
+
+            container.innerHTML = '';
+
+            if (appState.reviews.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            appState.reviews.forEach((review, index) => {
+                const isLeft = index % 2 === 0;
+                const bubbleClass = isLeft ? 'bubble-left' : 'bubble-right';
+                const badgeClass = isLeft
+                    ? 'bg-[#EFE6FA] text-[#6E528A] border-[#E2D4F4]'
+                    : 'bg-[#FDE8EE] text-[#8F5368] border-[#F8D5DF]';
+                const avatarClass = isLeft
+                    ? 'from-[#E9D8FD] to-[#F3E8FF] text-[#64487D]'
+                    : 'from-[#FBD5E0] to-[#FCE7F3] text-[#8A4F64]';
+
+                // Generate compact pastel aesthetic star icons
+                let starsHtml = '';
+                for (let s = 1; s <= 5; s++) {
+                    starsHtml += `<i class="${s <= review.rating ? 'ph-fill text-[#F4B860]' : 'ph text-gray-300'} ph-star text-[11px]"></i>`;
+                }
+
+                // Optional Demo/Review Image inside bubble (Pastel framed thumbnail)
+                const imageHtml = review.image
+                    ? `<div class="mt-2.5 rounded-xl overflow-hidden border border-white shadow-sm h-28 sm:h-32 bg-pastel-bg/60">
+                         <img src="${escapeHtml(review.image)}" alt="รูปประกอบรีวิว" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x360/F8E8F4/6A4C78?text=Demo+Review+Image';" />
+                       </div>`
+                    : '';
+
+                const cardHtml = `
+                    <article class="${bubbleClass} p-3.5 sm:p-4 flex flex-col justify-between h-full">
+                        <div>
+                            <!-- Pastel Aesthetic Header: Avatar, Name, Pill Tag & Stars -->
+                            <div class="flex items-center justify-between gap-2 pb-2.5 mb-2.5 border-b border-dashed ${isLeft ? 'border-[#E6DAF3]' : 'border-[#F5D8E0]'}">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-tr ${avatarClass} flex items-center justify-center font-semibold text-xs shrink-0 shadow-sm border-2 border-white">
+                                        ${escapeHtml(review.name.charAt(0).toUpperCase())}
+                                    </div>
+                                    <div class="min-w-0">
+                                        <h3 class="text-xs font-semibold text-pastel-deep truncate leading-tight">${escapeHtml(review.name)}</h3>
+                                        <span class="inline-flex items-center gap-1 px-2 py-0.5 mt-1 rounded-full text-[10px] font-medium border ${badgeClass} leading-none">
+                                            <i class="ph-fill ph-heart text-[9px] opacity-75"></i>
+                                            ${escapeHtml(review.tag || 'Verified')}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="text-right shrink-0 flex flex-col items-end">
+                                    <div class="flex items-center gap-0.5 bg-white/80 px-2 py-0.5 rounded-full border border-white shadow-sm leading-none">${starsHtml}</div>
+                                    <span class="text-[10px] text-pastel-muted mt-1 leading-none">${escapeHtml(review.date || 'เมื่อสักครู่')}</span>
+                                </div>
+                            </div>
+
+                            <!-- Clean & Tidy Review Message Body -->
+                            <div class="bg-white/75 rounded-xl px-3 py-2.5 border border-white/90">
+                                <p class="text-xs sm:text-[13px] text-pastel-deep/90 font-normal leading-relaxed break-words">
+                                    “${escapeHtml(review.message)}”
+                                </p>
+                            </div>
+                        </div>
+                        ${imageHtml}
+                    </article>
+                `;
+
+                container.insertAdjacentHTML('beforeend', cardHtml);
+            });
+        }
+
+        function renderContactModalContent() {
+            document.getElementById('contactSubtitleDisplay').textContent = appState.contacts.subtitle || '';
+            const container = document.getElementById('contactLinksList');
+            container.innerHTML = '';
+
+            appState.contacts.channels.forEach(ch => {
+                const itemHtml = `
+                    <a href="${escapeHtml(ch.url || '#')}" target="_blank" rel="noopener noreferrer"
+                       class="flex items-center justify-between p-3.5 rounded-2xl border border-pastel-purple/80 bg-pastel-bg/70 hover:bg-pastel-purple/30 transition group">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-pastel-pink to-pastel-purple flex items-center justify-center text-pastel-deep shadow-sm">
+                                <i class="ph ${escapeHtml(ch.icon || 'ph-link')} text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-pastel-muted">${escapeHtml(ch.platform)}</p>
+                                <p class="text-sm font-semibold text-pastel-deep">${escapeHtml(ch.label)}</p>
+                            </div>
+                        </div>
+                        <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-pastel-purpleDark group-hover:translate-x-0.5 transition">
+                            <i class="ph ph-arrow-up-right"></i>
+                        </span>
+                    </a>
+                `;
+                container.insertAdjacentHTML('beforeend', itemHtml);
+            });
+        }
+
+        // =========================================================
+        // CUSTOMER INTERACTION HANDLERS
+        // =========================================================
+        function setRating(val) {
+            appState.currentFormRating = val;
+            const buttons = document.querySelectorAll('#starSelector .star-btn');
+            buttons.forEach((btn, idx) => {
+                const icon = btn.querySelector('i');
+                if (idx < val) {
+                    icon.className = 'ph-fill ph-star';
+                    btn.classList.add('text-amber-400');
+                    btn.classList.remove('text-gray-300');
+                } else {
+                    icon.className = 'ph ph-star';
+                    btn.classList.remove('text-amber-400');
+                    btn.classList.add('text-gray-300');
+                }
+            });
+            const labels = ['1 ดาว', '2 ดาว', '3 ดาว', '4 ดาว (ประทับใจ)', '5 ดาว (ดีเยี่ยม)'];
+            document.getElementById('ratingText').textContent = labels[val - 1];
+        }
+
+        function handleReviewSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('reviewerName').value.trim();
+            const tag = document.getElementById('reviewTag').value.trim() || 'Verified Review';
+            const message = document.getElementById('reviewMessage').value.trim();
+            const image = document.getElementById('reviewImage').value.trim();
+
+            if (!name || !message) return;
+
+            const newReview = {
+                id: 'r_' + Date.now(),
+                name,
+                tag,
+                rating: appState.currentFormRating,
+                message,
+                date: 'เมื่อสักครู่',
+                image
+            };
+
+            // Add to top of reviews so customer sees their bubble immediately
+            appState.reviews.unshift(newReview);
+            saveState();
+            renderAll();
+
+            // Reset form & close modal
+            document.getElementById('submitReviewForm').reset();
+            setRating(5);
+            closeModal('reviewModal');
+            showToast('ส่งรีวิวเรียบร้อยแล้ว ขอบคุณสำหรับเครดิตค่ะ!');
+        }
+
+        // =========================================================
+        // BACK-OFFICE (ADMIN) FUNCTIONS
+        // =========================================================
+        function renderAdminPanelContent() {
+            // 1. Reviews count & list
+            document.getElementById('adminReviewCount').textContent = appState.reviews.length;
+            const listEl = document.getElementById('adminReviewsList');
+            listEl.innerHTML = '';
+
+            appState.reviews.forEach((r, idx) => {
+                const row = `
+                    <div class="p-3.5 rounded-2xl border border-pastel-purple/70 bg-pastel-bg/60 flex items-center justify-between gap-3">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-semibold text-pastel-deep">${escapeHtml(r.name)}</span>
+                                <span class="text-[10px] px-2 py-0.5 rounded-full bg-pastel-purple/50 text-pastel-deep">${r.rating} ★</span>
+                                <span class="text-[10px] text-pastel-muted">${escapeHtml(r. side || (idx % 2 === 0 ? 'ฝั่งซ้าย' : 'ฝั่งขวา'))}</span>
+                            </div>
+                            <p class="text-xs text-pastel-muted truncate mt-0.5">${escapeHtml(r.message)}</p>
+                        </div>
+                        <button onclick="deleteReview('${r.id}')" class="px-3 py-1.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-600 text-xs font-medium flex items-center gap-1 shrink-0 transition">
+                            <i class="ph ph-trash"></i> ลบ
+                        </button>
+                    </div>
+                `;
+                listEl.insertAdjacentHTML('beforeend', row);
+            });
+
+            // 2. Banner Preview
+            document.getElementById('adminBannerPreview').src = appState.bannerUrl;
+            document.getElementById('adminBannerInput').value = appState.bannerUrl;
+
+            // 3. Contacts Editor
+            document.getElementById('adminContactSubtitle').value = appState.contacts.subtitle || '';
+            const contactsEditor = document.getElementById('adminContactsEditor');
+            contactsEditor.innerHTML = '';
+
+            appState.contacts.channels.forEach((ch, index) => {
+                const html = `
+                    <div class="p-3.5 rounded-2xl border border-pastel-purple/70 bg-pastel-bg/50 grid grid-cols-1 sm:grid-cols-12 gap-2 items-center">
+                        <div class="sm:col-span-3">
+                            <label class="text-[10px] text-pastel-muted block">ชื่อแพลตฟอร์ม</label>
+                            <input type="text" value="${escapeHtml(ch.platform)}" onchange="updateChannelField(${index}, 'platform', this.value)"
+                                class="w-full px-3 py-1.5 rounded-lg border border-pastel-purple text-xs bg-white" />
+                        </div>
+                        <div class="sm:col-span-4">
+                            <label class="text-[10px] text-pastel-muted block">ชื่อบัญชี / ไอดีที่แสดง</label>
+                            <input type="text" value="${escapeHtml(ch.label)}" onchange="updateChannelField(${index}, 'label', this.value)"
+                                class="w-full px-3 py-1.5 rounded-lg border border-pastel-purple text-xs bg-white" />
+                        </div>
+                        <div class="sm:col-span-4">
+                            <label class="text-[10px] text-pastel-muted block">ลิงก์ URL เมื่อคลิก</label>
+                            <input type="text" value="${escapeHtml(ch.url)}" onchange="updateChannelField(${index}, 'url', this.value)"
+                                class="w-full px-3 py-1.5 rounded-lg border border-pastel-purple text-xs bg-white" />
+                        </div>
+                        <div class="sm:col-span-1 flex justify-end pt-3 sm:pt-4">
+                            <button onclick="removeContactChannel(${index})" class="w-8 h-8 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 flex items-center justify-center">
+                                <i class="ph ph-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                contactsEditor.insertAdjacentHTML('beforeend', html);
+            });
+        }
+
+        function deleteReview(id) {
+            appState.reviews = appState.reviews.filter(r => r.id !== id);
+            saveState();
+            renderAll();
+            showToast('ลบรายการรีวิวเรียบร้อยแล้ว');
+        }
+
+        function saveBannerUrl() {
+            const url = document.getElementById('adminBannerInput').value.trim();
+            if (!url) return;
+            appState.bannerUrl = url;
+            saveState();
+            renderAll();
+            showToast('อัปเดตรูปแบนเนอร์เรียบร้อยแล้ว');
+        }
+
+        function handleBannerFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                appState.bannerUrl = e.target.result;
+                saveState();
+                renderAll();
+                showToast('เปลี่ยนรูปแบนเนอร์จากไฟล์ของคุณสำเร็จ');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function restoreDefaultBanner() {
+            appState.bannerUrl = DEFAULT_BANNER;
+            saveState();
+            renderAll();
+            showToast('คืนค่ารูปแบนเนอร์ต้นฉบับแล้ว');
+        }
+
+        function updateChannelField(index, field, value) {
+            if (appState.contacts.channels[index]) {
+                appState.contacts.channels[index][field] = value;
+            }
+        }
+
+        function addContactChannel() {
+            appState.contacts.channels.push({
+                id: 'c_' + Date.now(),
+                platform: 'ช่องทางใหม่',
+                label: '@yainorika',
+                url: 'https://',
+                icon: 'ph-link'
+            });
+            renderAdminPanelContent();
+        }
+
+        function removeContactChannel(index) {
+            appState.contacts.channels.splice(index, 1);
+            renderAdminPanelContent();
+        }
+
+        function saveContactChannels() {
+            appState.contacts.subtitle = document.getElementById('adminContactSubtitle').value.trim();
+            saveState();
+            renderAll();
+            showToast('บันทึกข้อมูลช่องทางการติดต่อเรียบร้อยแล้ว');
+        }
+
+        function resetDemoData() {
+            appState.bannerUrl = DEFAULT_BANNER;
+            appState.contacts = JSON.parse(JSON.stringify(DEFAULT_CONTACTS));
+            appState.reviews = JSON.parse(JSON.stringify(DEFAULT_REVIEWS));
+            saveState();
+            renderAll();
+            showToast('รีเซ็ตข้อมูลกลับเป็นค่าเริ่มต้น Demo แล้ว');
+        }
+
+        // =========================================================
+        // MODAL & TAB UTILITIES
+        // =========================================================
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openReviewModal() {
+            const modal = document.getElementById('reviewModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openAdminModal() {
+            renderAdminPanelContent();
+            const modal = document.getElementById('adminModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function switchAdminTab(tabId) {
+            document.querySelectorAll('.admin-tab-pane').forEach(el => el.classList.add('hidden'));
+            document.getElementById(tabId).classList.remove('hidden');
+
+            document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+                btn.classList.remove('border-pastel-purpleDark', 'text-pastel-deep');
+                btn.classList.add('border-transparent', 'text-pastel-muted');
+            });
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('border-transparent', 'text-pastel-muted');
+            activeBtn.classList.add('border-pastel-purpleDark', 'text-pastel-deep');
+        }
+
+        function showToast(msg) {
+            const box = document.getElementById('toastBox');
+            document.getElementById('toastMessage').textContent = msg;
+            box.classList.remove('hidden');
+            box.classList.add('flex');
+            setTimeout(() => {
+                box.classList.add('hidden');
+                box.classList.remove('flex');
+            }, 3000);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            loadState();
+            renderAll();
+        };
+    </script>
+</body>
+</html>
